@@ -1,0 +1,66 @@
+# we ignore environment variables and secrets
+.env
+.env.local
+.env.*.local
+
+# we ignore virtual environment directories
+venv/
+env/
+ENV/
+.venv
+
+# we ignore node modules for frontend
+node_modules/
+package-lock.json
+yarn.lock
+
+# we ignore build outputs
+build/
+dist/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+
+# we ignore IDE settings and temporary files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.sublime-project
+.sublime-workspace
+
+# we ignore database backups
+*.db
+*.sqlite
+database.json.backup
+
+# we ignore logs
+*.log
+logs/
+
+# we ignore temporary files
+temp/
+tmp/
+*.tmp
+
+# we ignore OS specific files
+Thumbs.db
+.DS_Store
+
+# we ignore build artifacts
+dist/
+build/
+*.egg-info/
+
+# we ignore local testing
+test_results/
+coverage/
+.coverage
+
+# we ignore frontend specific
+.next/
+.out/
+.cache/
+coverage/

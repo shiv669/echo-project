@@ -1,0 +1,29 @@
+<!DOCTYPE html> {/* we specify the document type */}
+<html lang="en"> {/* we set the language to english */}
+  <head>
+    <meta charset="UTF-8" /> {/* we specify character encoding */}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> {/* we set viewport for responsive design */}
+    <meta name="description" content="ECHO - Collective Memory of Humanity - Interactive Knowledge Graph" /> {/* we add description for seo */}
+    <title>ECHO - Collective Memory</title> {/* we set the page title */}
+    <style>
+      /* we add some global styles here to avoid blank white screen while app loads */
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      #root {
+        width: 100%; /* we make root element full width */
+        height: 100vh; /* we make root element full height */
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript> {/* we show message if js is disabled */}
+    <div id="root"></div> {/* we create the root element where react app will be mounted */}
+  </body>
+</html>

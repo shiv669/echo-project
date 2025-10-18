@@ -1,0 +1,312 @@
+/* we create a global style sheet for consistent styling across the app */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* we include padding and border in width and height calculations */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* we use a modern font stack */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* we create a gradient background */
+  color: #333; /* we set default text color */
+  min-height: 100vh; /* we make body take full viewport height */
+}
+
+.app-container {
+  display: flex; /* we use flexbox for layout */
+  flex-direction: column; /* we stack items vertically */
+  min-height: 100vh; /* we make container take full height */
+  background-color: #f5f5f5; /* we set background color */
+}
+
+.app-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* we use gradient header */
+  color: white; /* we color text white */
+  padding: 2rem; /* we add padding for spacing */
+  text-align: center; /* we center the text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* we add shadow for depth */
+}
+
+.app-header h1 {
+  font-size: 2.5rem; /* we set large font size for title */
+  margin-bottom: 0.5rem; /* we add space below title */
+  font-weight: 700; /* we make it bold */
+}
+
+.app-header p {
+  font-size: 1rem; /* we set subtitle font size */
+  opacity: 0.95; /* we make subtitle slightly transparent */
+}
+
+.app-content {
+  display: flex; /* we use flexbox for layout */
+  flex: 1; /* we make content take remaining space */
+  gap: 2rem; /* we add space between sidebar and graph */
+  padding: 2rem; /* we add padding around content */
+  max-width: 1600px; /* we limit max width for better readability */
+  margin: 0 auto; /* we center the content */
+  width: 100%; /* we make it full width */
+}
+
+.sidebar {
+  width: 350px; /* we set fixed width for sidebar */
+  background: white; /* we use white background */
+  border-radius: 12px; /* we add rounded corners */
+  padding: 1.5rem; /* we add padding inside */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); /* we add subtle shadow */
+  display: flex; /* we use flexbox */
+  flex-direction: column; /* we stack items vertically */
+  gap: 2rem; /* we add space between sections */
+  max-height: calc(100vh - 200px); /* we limit height and make it scrollable */
+  overflow-y: auto; /* we add vertical scroll if content overflows */
+}
+
+.input-section {
+  border-bottom: 2px solid #f0f0f0; /* we add divider line */
+  padding-bottom: 1.5rem; /* we add space below */
+}
+
+.input-section h2 {
+  font-size: 1.5rem; /* we set heading size */
+  margin-bottom: 1rem; /* we add space below heading */
+  color: #667eea; /* we color heading with app accent */
+}
+
+.form-group {
+  margin-bottom: 1rem; /* we add space between form fields */
+  display: flex; /* we use flexbox */
+  flex-direction: column; /* we stack label and input vertically */
+}
+
+.form-group label {
+  font-weight: 600; /* we make label bold */
+  margin-bottom: 0.5rem; /* we add space below label */
+  color: #555; /* we color label dark gray */
+  font-size: 0.9rem; /* we set small font size */
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem; /* we add padding inside input */
+  border: 1px solid #ddd; /* we add subtle border */
+  border-radius: 8px; /* we add rounded corners */
+  font-size: 0.95rem; /* we set font size */
+  font-family: inherit; /* we inherit font family */
+  transition: border-color 0.3s ease; /* we add smooth transition on focus */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none; /* we remove default outline */
+  border-color: #667eea; /* we change border to accent color */
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1); /* we add focus shadow */
+}
+
+.divider {
+  text-align: center; /* we center the text */
+  color: #999; /* we color divider gray */
+  margin: 1rem 0; /* we add space around divider */
+  font-size: 0.9rem; /* we set small font size */
+  font-weight: 600; /* we make it bold */
+}
+
+.input-section button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* we use gradient for button */
+  color: white; /* we color text white */
+  border: none; /* we remove border */
+  padding: 0.9rem; /* we add padding */
+  border-radius: 8px; /* we add rounded corners */
+  font-size: 1rem; /* we set font size */
+  font-weight: 600; /* we make text bold */
+  cursor: pointer; /* we change cursor to pointer */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* we add smooth transitions */
+}
+
+.input-section button:hover:not(:disabled) {
+  transform: translateY(-2px); /* we move button up on hover */
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4); /* we add shadow on hover */
+}
+
+.input-section button:disabled {
+  opacity: 0.7; /* we reduce opacity when disabled */
+  cursor: not-allowed; /* we change cursor to not-allowed */
+}
+
+.error-message {
+  background-color: #fee; /* we use light red background */
+  color: #c33; /* we color text red */
+  padding: 0.75rem; /* we add padding */
+  border-radius: 6px; /* we add rounded corners */
+  font-size: 0.9rem; /* we set small font size */
+  margin-bottom: 1rem; /* we add space below */
+  border-left: 4px solid #c33; /* we add left border accent */
+}
+
+.success-message {
+  background-color: #efe; /* we use light green background */
+  color: #3c3; /* we color text green */
+  padding: 0.75rem; /* we add padding */
+  border-radius: 6px; /* we add rounded corners */
+  font-size: 0.9rem; /* we set small font size */
+  margin-bottom: 1rem; /* we add space below */
+  border-left: 4px solid #3c3; /* we add left border accent */
+}
+
+.node-details {
+  border-top: 2px solid #f0f0f0; /* we add divider line */
+  padding-top: 1.5rem; /* we add space above */
+}
+
+.node-details h3 {
+  color: #667eea; /* we color heading with accent */
+  margin-bottom: 0.75rem; /* we add space below */
+  font-size: 1.2rem; /* we set heading size */
+}
+
+.node-details h4 {
+  color: #333; /* we color subheading dark */
+  margin-bottom: 1rem; /* we add space below */
+  font-size: 1.1rem; /* we set subheading size */
+  word-break: break-word; /* we allow breaking long words */
+}
+
+.detail-group {
+  margin-bottom: 1rem; /* we add space between groups */
+}
+
+.detail-group label {
+  display: block; /* we make label block element */
+  font-weight: 600; /* we make label bold */
+  color: #555; /* we color label dark gray */
+  margin-bottom: 0.5rem; /* we add space below label */
+  font-size: 0.9rem; /* we set small font size */
+}
+
+.detail-group p {
+  color: #666; /* we color text medium gray */
+  font-size: 0.9rem; /* we set small font size */
+  line-height: 1.5; /* we increase line height for readability */
+}
+
+.detail-group a {
+  color: #667eea; /* we color links with accent */
+  text-decoration: none; /* we remove underline */
+  transition: color 0.2s ease; /* we add smooth transition */
+}
+
+.detail-group a:hover {
+  color: #764ba2; /* we change color on hover */
+  text-decoration: underline; /* we add underline on hover */
+}
+
+.tags {
+  display: flex; /* we use flexbox */
+  flex-wrap: wrap; /* we allow tags to wrap */
+  gap: 0.5rem; /* we add space between tags */
+}
+
+.tag {
+  background-color: #f0f0f0; /* we use light gray background */
+  color: #333; /* we color text dark */
+  padding: 0.4rem 0.8rem; /* we add padding */
+  border-radius: 20px; /* we add rounded corners for pill shape */
+  font-size: 0.85rem; /* we set small font size */
+  border: 1px solid #ddd; /* we add subtle border */
+  display: inline-block; /* we make it inline-block */
+}
+
+.tag.method {
+  background-color: #e8f0fe; /* we use light blue background for methods */
+  color: #1967d2; /* we color text blue */
+  border-color: #1967d2; /* we color border blue */
+}
+
+.close-btn {
+  background-color: #f0f0f0; /* we use light gray background */
+  color: #333; /* we color text dark */
+  border: 1px solid #ddd; /* we add border */
+  padding: 0.6rem 1rem; /* we add padding */
+  border-radius: 6px; /* we add rounded corners */
+  cursor: pointer; /* we change cursor to pointer */
+  transition: background-color 0.2s ease; /* we add smooth transition */
+  font-size: 0.9rem; /* we set small font size */
+  margin-top: 1rem; /* we add space above */
+}
+
+.close-btn:hover {
+  background-color: #e0e0e0; /* we darken on hover */
+}
+
+.graph-section {
+  flex: 1; /* we make graph take remaining space */
+  background: white; /* we use white background */
+  border-radius: 12px; /* we add rounded corners */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); /* we add subtle shadow */
+  padding: 1.5rem; /* we add padding */
+  position: relative; /* we set position for absolute children */
+  overflow: hidden; /* we hide overflow */
+}
+
+.loading {
+  display: flex; /* we use flexbox */
+  align-items: center; /* we center vertically */
+  justify-content: center; /* we center horizontally */
+  height: 100%; /* we take full height */
+  font-size: 1.2rem; /* we set font size */
+  color: #999; /* we color text gray */
+}
+
+.empty-state {
+  display: flex; /* we use flexbox */
+  align-items: center; /* we center vertically */
+  justify-content: center; /* we center horizontally */
+  height: 100%; /* we take full height */
+  font-size: 1.1rem; /* we set font size */
+  color: #999; /* we color text gray */
+  text-align: center; /* we center text */
+}
+
+.app-footer {
+  background-color: #333; /* we use dark background */
+  color: white; /* we color text white */
+  padding: 1.5rem; /* we add padding */
+  text-align: center; /* we center text */
+  font-size: 0.9rem; /* we set small font size */
+  border-top: 2px solid #667eea; /* we add accent border */
+}
+
+.app-footer p {
+  margin: 0.3rem 0; /* we add margin for spacing */
+}
+
+/* we add responsive design for smaller screens */
+@media (max-width: 1200px) {
+  .app-content {
+    flex-direction: column; /* we stack sidebar and graph vertically on smaller screens */
+    gap: 1rem; /* we reduce gap */
+  }
+
+  .sidebar {
+    width: 100%; /* we make sidebar full width */
+    max-height: 400px; /* we limit height */
+  }
+}
+
+/* we make scrollbar styling nicer */
+.sidebar::-webkit-scrollbar {
+  width: 6px; /* we set scrollbar width */
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1; /* we color track light gray */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #888; /* we color thumb gray */
+  border-radius: 3px; /* we add rounded corners */
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* we darken on hover */
+}

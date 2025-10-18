@@ -1,0 +1,126 @@
+/* we style the graph container and svg elements */
+
+.graph-container {
+  width: 100%; /* we make container full width */
+  height: 100%; /* we make container full height */
+  position: relative; /* we set position for absolute positioning of children */
+  display: flex; /* we use flexbox */
+  flex-direction: column; /* we stack items vertically */
+}
+
+.graph-svg {
+  width: 100%; /* we make svg full width of container */
+  height: 100%; /* we make svg full height of container */
+  background-color: #fafafa; /* we use light gray background */
+}
+
+/* we style nodes on the graph based on their role/connectivity */
+circle {
+  transition: r 0.3s ease, opacity 0.3s ease, filter 0.3s ease; /* we add smooth transitions for interactive effects */
+  cursor: pointer; /* we show pointer cursor to indicate interactivity */
+}
+
+circle:hover {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3)); /* we add prominent drop shadow on hover */
+}
+
+/* we style hub nodes (5+ connections) - they're highly important in the knowledge graph */
+.node-hub {
+  fill: #2563eb; /* we use blue for hub nodes to show high connectivity */
+}
+
+/* we style central nodes (2-5 connections) - they bridge different concepts */
+.node-central {
+  fill: #10b981; /* we use green for central nodes to show moderate connectivity */
+}
+
+/* we style peripheral nodes (<2 connections) - they're newer or specialized concepts */
+.node-peripheral {
+  fill: #f59e0b; /* we use orange for peripheral nodes to show limited connectivity */
+}
+
+/* we style links between nodes - color intensity shows relationship strength */
+line {
+  transition: stroke-width 0.3s ease, stroke-opacity 0.3s ease; /* we add smooth transitions for hover effects */
+}
+
+line:hover {
+  stroke-opacity: 0.9; /* we increase opacity on hover for better visibility */
+  stroke-width: 3px; /* we increase width on hover to emphasize connection */
+}
+
+/* we style strong connections (weight > 0.7) - semantic similarity is high */
+.edge-strong {
+  stroke: #10b981; /* we use green to indicate strong semantic relationships */
+}
+
+/* we style medium connections (0.4 - 0.7 weight) - moderate semantic similarity */
+.edge-medium {
+  stroke: #f59e0b; /* we use orange to indicate moderate connections */
+}
+
+/* we style weak connections (< 0.4 weight) - minimal semantic similarity */
+.edge-weak {
+  stroke: #ef4444; /* we use red to indicate weak connections */
+}
+
+/* we style text labels on nodes */
+text {
+  pointer-events: none; /* we disable mouse events on text so clicks hit circles */
+  font-weight: 600; /* we make text bold for readability */
+  font-size: 0.9rem; /* we set moderate font size */
+  user-select: none; /* we prevent text selection for better ux */
+  fill: #374151; /* we use dark gray text */
+}
+
+/* we style the legend that explains the visualization */
+.graph-legend {
+  position: absolute; /* we position absolutely in corner */
+  bottom: 1rem; /* we position from bottom */
+  left: 1rem; /* we position from left */
+  background: rgba(255, 255, 255, 0.97); /* we use semi-transparent white for slight transparency */
+  padding: 1rem; /* we add padding for spacing */
+  border-radius: 8px; /* we add rounded corners for modern look */
+  font-size: 0.85rem; /* we set small font size for legend */
+  color: #4b5563; /* we use neutral gray text */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* we add shadow for depth */
+  border: 1px solid #e5e7eb; /* we add border to frame legend */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* we use clean system fonts */
+}
+
+.graph-legend p {
+  margin: 0.5rem 0; /* we add slight margin between legend items */
+  display: flex; /* we use flexbox for alignment */
+  align-items: center; /* we vertically center items */
+  gap: 0.5rem; /* we add spacing between color indicator and text */
+}
+
+/* we create color indicators for legend items */
+.legend-color {
+  width: 16px; /* we set fixed width for square indicator */
+  height: 16px; /* we set fixed height for square indicator */
+  border-radius: 3px; /* we add subtle rounding */
+  flex-shrink: 0; /* we prevent shrinking of indicator */
+  display: inline-block; /* we make it inline for text flow */
+}
+
+/* we color the indicators to match node types */
+.legend-hub {
+  background-color: #2563eb; /* we use blue for hub nodes indicator */
+}
+
+.legend-central {
+  background-color: #10b981; /* we use green for central nodes indicator */
+}
+
+.legend-peripheral {
+  background-color: #f59e0b; /* we use orange for peripheral nodes indicator */
+}
+
+/* we style the legend title */
+.graph-legend h4 {
+  margin: 0 0 0.75rem 0; /* we set margin for title spacing */
+  font-weight: 700; /* we make title bold */
+  color: #1f2937; /* we use dark text for title */
+  font-size: 0.95rem; /* we set title font size slightly larger */
+}
