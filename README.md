@@ -349,25 +349,6 @@ curl "http://localhost:8000/get_node/1"
 
 ---
 
-## � Why ECHO is a Strong Hackathon Project
-
-**Judges' Rubric Analysis:**
-
-| Criteria | ECHO Score | Evidence |
-|----------|-----------|----------|
-| **Completion** | ✅ High | All 4 core features fully working, deployed |
-| **Originality** | ✅ High | Unique angle on knowledge graphs (not another TODO app) |
-| **Design** | ✅ High | Beautiful D3 visualization, thoughtful UI/UX |
-| **Adherence to Theme** | ✅ High | Pure open-source knowledge management |
-| **Learning** | ✅ High | Mastered D3.js, AI APIs, semantic algorithms, full stack |
-| **Technology** | ✅ High | AI integration + force simulation + semantic logic (not trivial) |
-
-**Bonus Points:**
-- ✅ Gemini API usage (direct prize track eligibility)
-- ✅ Best Documentation (README + CONTRIBUTING + CODE_OF_CONDUCT)
-- ✅ Code for Good (open-source knowledge for humanity)
-- ✅ Deployable demo (works immediately, judges can play with it)
-
 ---
 
 ## 🚀 Getting Started
